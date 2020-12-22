@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "cache": "react-native start --reset-cache"
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.10"
+    "react-native": "0.59.10",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-screens": "^2.16.1",
+    "react-navigation": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
