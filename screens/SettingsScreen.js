@@ -1,18 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View } from 'react-native';
+import LifecycleA from '../components/LifecycleA';
 
-import TabNavigator from '../navigator/TabNavigator';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-class Main extends React.Component {
+class SettingsScreen extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      name: '',
+    };
   }
   static getDerivedStateFromProps(props, state) {
     return null;
@@ -30,11 +25,12 @@ class Main extends React.Component {
   componentWillUnmount() {}
   render() {
     return (
-      <View style={styles.container}>
-        <TabNavigator />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Settings!</Text>
+        <LifecycleA />
       </View>
     );
   }
 }
 
-export default Main;
+export default SettingsScreen;

@@ -7,9 +7,9 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 // import LifecycleA from './components/LifecycleA';
-import Main from './screens/Main';
+import Main from './navigator/Main';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,17 +22,10 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{ flex: 1 }}>
         {/* <Text>{instructions}</Text> */}
-        {/* <LifecycleA /> */}
         <Main />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
