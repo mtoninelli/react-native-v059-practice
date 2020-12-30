@@ -16,8 +16,8 @@ class Main extends React.Component {
     super(props);
     this.state = {
       user: {
-        userName: 'niki',
-        age: 32,
+        userName: 'miki',
+        age: 38,
         setUserState: (userState) => {
           const newUserState = Object.assign({}, this.state.user, userState); // merge old with new state for don't overwite the set function
           this.setState({ user: newUserState });

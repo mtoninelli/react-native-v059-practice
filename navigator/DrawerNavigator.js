@@ -1,37 +1,12 @@
-import React from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
 import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 
-class UserScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity onPress={this.props.navigation.openDrawer}>
-          <Text>Open Drawer</Text>
-        </TouchableOpacity>
-        <Text>user</Text>
-      </View>
-    );
-  }
-}
-
-class InfoScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity onPress={this.props.navigation.openDrawer}>
-          <Text>Open Drawer</Text>
-        </TouchableOpacity>
-        <Text>Info</Text>
-      </View>
-    );
-  }
-}
+import UserScreen from '../screens/UserScreen';
+import AnimationsScreen from '../screens/AnimationsScreen';
 
 const DrawerNavigator = createDrawerNavigator(
   {
+    Animations: AnimationsScreen,
     User: UserScreen,
-    Info: InfoScreen,
   },
   {
     hideStatusBar: true,

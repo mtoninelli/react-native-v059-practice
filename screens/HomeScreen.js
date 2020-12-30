@@ -47,16 +47,13 @@ class HomeScreen extends React.Component {
               <TextInput
                 value={this.state.name}
                 placeholder={'Type your name'}
-                onChangeText={(v) => {
-                  this.setStateName(v);
-                }}
+                onChangeText={(v) => this.setStateName(v)}
               />
               <Button title="Print state" onPress={this.printState} />
               <Button
                 title="Go to Settings"
                 onPress={this.navigateToSettings}
               />
-              <Text>MyUserContext state value: {user.userName}</Text>
             </>
           )}
         </MyUserContext.Consumer>

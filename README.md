@@ -1,4 +1,4 @@
-Install old version
+## INSTALL REACT NATIVE 0.59
 
 `npx react-native-cli init rnEge05910 --version 0.59.10`
 
@@ -10,7 +10,17 @@ https://reactnavigation.org/docs/3.x/getting-started
 
 `yarn add react-native-screens`
 
-CACHE
+## TESTING
+
+https://github.com/callstack/react-native-testing-library (limitations for v<0.60)
+https://testing-library.com/docs/react-native-testing-library/intro/
+`yarn add --dev @testing-library/react-native`
+
+Interesting articles:
+https://kentcdodds.com/blog/testing-implementation-details
+
+## CLEAR CACHE
+
 `npx react-native start --reset-cache`
 
 1. Clear watchman watches: `watchman watch-del-all`.

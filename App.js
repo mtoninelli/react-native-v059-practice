@@ -8,7 +8,6 @@
 
 import React, { Component } from 'react';
 import { View } from 'react-native';
-// import LifecycleA from './components/LifecycleA';
 import Main from './navigator/Main';
 
 // const instructions = Platform.select({

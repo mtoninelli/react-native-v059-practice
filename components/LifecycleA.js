@@ -85,7 +85,7 @@ class LifecycleA extends React.Component {
       <View style={styles.container}>
         <Text>LifecycleA</Text>
         <Square />
-        <Text>count: {this.state.count}</Text>
+        <Text testID="counterText">count: {this.state.count}</Text>
         <Button onPress={() => this.addCount()} title="add" />
         <LifecycleB />
       </View>
