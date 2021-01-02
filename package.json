@@ -3,17 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "ios": "react-native run-ios",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "cache": "react-native start --reset-cache",
-    "testV": "jest --verbose --coverage",
-    "test:update": "jest --verbose --coverage --updateSnapshot",
-    "test:watch": "jest --verbose --watch",
-    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
+    "test": "jest --watch",
+    "cache": "react-native start --reset-cache"
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.10",
+    "react-native": "^0.59.10",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-reanimated": "^1.13.2",
     "react-native-screens": "^2.16.1",
@@ -21,16 +18,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "@babel/runtime": "^7.12.5",
-    "babel-jest": "^26.6.3",
-    "jest": "^26.6.3",
+    "@testing-library/react-native": "^7.1.0",
+    "@types/jest": "^26.0.19",
+    "babel-jest": "24.9.0",
+    "jest": "24.9.0",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "16.8.3"
   },
   "jest": {
     "preset": "react-native",
-    "moduleFileExtensions": [
-      "js"
-    ]
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   }
 }

@@ -2,12 +2,26 @@ import React from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
 import { MyUserContext } from '../context/UserContext';
 
+class UserContext extends React.Component {
+  static contextType = MyUserContext;
+  render() {
+    return (
+      <MyUserContext.Consumer>
+        {({ user }) => {
+          // console.log('#$%^&*(*&^%$#$%^&*((*_____', user);
+          return <Text>Context state:: {user.userName}</Text>;
+        }}
+      </MyUserContext.Consumer>
+    );
+  }
+}
+
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  static contextType = MyUserContext;
+  static contextType = MyUserContext; // pass context to class
   static getDerivedStateFromProps(props, state) {
     return null;
   }
@@ -38,25 +52,17 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <MyUserContext.Consumer>
-          {({ user }) => (
-            <>
-              <Text>Home!</Text>
-              <Text>Local state {this.state.name}</Text>
-              <Text>Context state {user.userName}</Text>
-              <TextInput
-                value={this.state.name}
-                placeholder={'Type your name'}
-                onChangeText={(v) => this.setStateName(v)}
-              />
-              <Button title="Print state" onPress={this.printState} />
-              <Button
-                title="Go to Settings"
-                onPress={this.navigateToSettings}
-              />
-            </>
-          )}
-        </MyUserContext.Consumer>
+        <Text>Home!</Text>
+        <Text testID="t-username">Local state {this.state.name}</Text>
+        <UserContext />
+        <TextInput
+          testID="t-input"
+          value={this.state.name}
+          placeholder={'Type your name'}
+          onChangeText={(v) => this.setStateName(v)}
+        />
+        <Button title="Print state" onPress={this.printState} />
+        <Button title="Go to Settings" onPress={this.navigateToSettings} />
       </View>
     );
   }

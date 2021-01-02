@@ -2,9 +2,11 @@ import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 
 import UserScreen from '../screens/UserScreen';
 import AnimationsScreen from '../screens/AnimationsScreen';
+import Animations2Screen from '../screens/Animations2Screen';
 
 const DrawerNavigator = createDrawerNavigator(
   {
+    Animations2: Animations2Screen,
     Animations: AnimationsScreen,
     User: UserScreen,
   },
