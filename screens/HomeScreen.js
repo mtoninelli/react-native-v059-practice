@@ -2,19 +2,18 @@ import React from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
 import { MyUserContext } from '../context/UserContext';
 
-class UserContext extends React.Component {
-  static contextType = MyUserContext;
-  render() {
-    return (
-      <MyUserContext.Consumer>
-        {({ user }) => {
-          // console.log('#$%^&*(*&^%$#$%^&*((*_____', user);
-          return <Text>Context state:: {user.userName}</Text>;
-        }}
-      </MyUserContext.Consumer>
-    );
-  }
-}
+// class UserContext extends React.Component {
+//   static contextType = MyUserContext;
+//   render() {
+//     return (
+//       <MyUserContext.Consumer>
+//         {({ user }) => {
+//           return <Text>Context state: {user.userName}</Text>;
+//         }}
+//       </MyUserContext.Consumer>
+//     );
+//   }
+// }
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -53,8 +52,19 @@ class HomeScreen extends React.Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Home!</Text>
-        <Text testID="t-username">Local state {this.state.name}</Text>
-        <UserContext />
+        <Text testID={'t-username-state'}>
+          {String('Local state: ' + this.state.name)}
+        </Text>
+        {/* <MyUserContext.Consumer>
+          {({ user }) => {
+            <>
+              <Text>{String('Context state: ' + user.userName)}</Text>
+            </>;
+          }}
+        </MyUserContext.Consumer> */}
+        <Text testID={'t-username-context'}>
+          {String('Context state: ' + this.context.user.userName)}
+        </Text>
         <TextInput
           testID="t-input"
           value={this.state.name}
