@@ -46,6 +46,7 @@ describe('HomeScreen', () => {
     );
   });
 
+  //verify... the test value is still the default one ???
   it('renders text state from context', async () => {
     const { getByTestId } = render(
       <MyUserContext.Provider value={state}>
